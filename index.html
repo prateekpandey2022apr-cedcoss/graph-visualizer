@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <textarea cols="80" rows="8">[
+{
+    "id": 0,
+    "key": "a",
+    "adjs": [
+    {
+        "id": 1,
+        "name": "b"
+    },
+    {
+        "id": 2,
+        "name": "c"
+    },
+    {
+        "id": 3,
+        "name": "d"
+    }
+    ]
+},
+{
+    "id": 1,
+    "key": "b",
+    "adjs": [
+    {
+        "id": 0,
+        "name": "a"
+    },
+    {
+        "id": 4,
+        "name": "e"
+    }
+    ]
+},
+{
+    "id": 2,
+    "key": "c",
+    "adjs": [
+    {
+        "id": 0,
+        "name": "a"
+    },
+    {
+        "id": 4,
+        "name": "e"
+    },
+    {
+        "id": 5,
+        "name": "f"
+    }
+    ]
+},
+{
+    "id": 3,
+    "key": "d",
+    "adjs": [
+    {
+        "id": 0,
+        "name": "a"
+    },
+    {
+        "id": 5,
+        "name": "f"
+    }
+    ]
+},
+{
+    "id": 4,
+    "key": "e",
+    "adjs": [
+    {
+        "id": 1,
+        "name": "b"
+    },
+    {
+        "id": 2,
+        "name": "c"
+    },
+    {
+        "id": 6,
+        "name": "g"
+    }
+    ]
+},
+{
+    "id": 5,
+    "key": "f",
+    "adjs": [
+    {
+        "id": 2,
+        "name": "c"
+    },
+    {
+        "id": 3,
+        "name": "d"
+    },
+    {
+        "id": 6,
+        "name": "g"
+    }
+    ]
+},
+{
+    "id": 6,
+    "key": "g",
+    "adjs": [
+    {
+        "id": 4,
+        "name": "e"
+    },
+    {
+        "id": 5,
+        "name": "f"
+    }
+    ]
+}
+]</textarea>
+        <br />
+        <input type="submit" />
+        <div id="graphic"></div>
+    </div>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="visualizer.js"></script>
+    <script>
+        const input = document.querySelector("input");
+        const txt = document.querySelector("textarea");
+        const graph = document.querySelector("#graphic");
+        input.addEventListener("click", (e) => {
+            graph.innerHTML = "";
+            plotGraph(JSON.parse(txt.value));
+        })
+    </script>
+</body>
+
+
+</html>
